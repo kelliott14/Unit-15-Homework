@@ -1,0 +1,37 @@
+<div class="container">
+<h1>To Do List</h1>
+
+    <h2>Add to the list:</h2>
+        <div class="card">
+            <form class="create-form">
+                <div class="form-group">
+                    <input type="input" class="form-control" id="userInput" name="addInput" placeholder="Add your item here">
+                </div>
+                <button type="submit" class="btn btn-info">Add</button>
+            </form>
+        </div>
+
+    <h2>On the list:</h2>
+    <div class="listGroup card-columns">
+    {{#each burgers}}
+        {{#unless devoured}}
+             
+        <div class="card">
+            <h5 class="card-title">{{burger_name}}</h5>
+            <button class="devourButton btn btn-info" data-id="{{id}}">Done!</button>
+            </div>
+            {{/unless}}
+        {{/each}}
+        </div>
+    
+    <h2>Already done!</h2>
+    <div class="listGroup card-columns">
+    {{#each burgers}}
+        {{#if devoured}}
+        <div class="card">
+            <h5 class="card-title">{{burger_name}}</h5>
+            </div>
+            {{/if}}
+        {{/each}}
+    </div>
+</div>
