@@ -19,7 +19,7 @@ require("./controllers/api-routes.js")(app);
 
 db.sequelize.sync({  }).then(function() {
     app.listen(PORT, function() {
-        console.log("App listening on http://localhost/" + PORT)
+        console.log("App listening on http://localhost:" + PORT)
     });
 });
 

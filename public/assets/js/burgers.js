@@ -7,8 +7,8 @@ $(".devourButton").on("click", function(event) {
     }).then(function(){
         console.log("devoured")
 
+        location.reload();
     });
-    location.reload();
 });
 
 $(".create-form").on("submit", function(event) {
@@ -23,6 +23,6 @@ $(".create-form").on("submit", function(event) {
     }).then(function(){
         console.log("added burger")
 
+        location.reload();
     });
-    location.reload();
 });
