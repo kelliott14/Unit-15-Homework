@@ -2,9 +2,7 @@ var express = require("express")
 
 var PORT = process.env.PORT || 7000;
 var app = express();
-
 var db = require("./models");
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,7 +20,7 @@ app.use(routes);
 
 db.sequelize.sync({ }).then(function() {
     app.listen(PORT, function() {
-        console.log("App listening on http://localhost/" + PORT);
+        console.log("App listening on http://localhost/" + PORT)
     });
 });
 

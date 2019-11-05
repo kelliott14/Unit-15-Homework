@@ -1,25 +1,22 @@
 {
-  "name": "unit14-homework",
+  "name": "unit-15-homework",
   "version": "1.0.0",
-  "description": "Boot Camp - Week 14 - Homework - Handlebars",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kelliott14/Unit14-Homework.git"
+    "url": "git+https://github.com/kelliott14/Unit-15-Homework.git"
   },
-  "author": "Katie Elliott",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kelliott14/Unit14-Homework/issues"
+    "url": "https://github.com/kelliott14/Unit-15-Homework/issues"
   },
-  "homepage": "https://github.com/kelliott14/Unit14-Homework#readme",
+  "homepage": "https://github.com/kelliott14/Unit-15-Homework#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "mysql": "^2.17.1",
     "mysql2": "^2.0.0",
     "sequelize": "^5.21.2"
   }
