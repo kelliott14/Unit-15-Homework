@@ -14,11 +14,10 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burgers_controller.js");
+require("./controllers/api-routes.js")(app);
+// require("./controllers/html-routes.js")(app);
 
-app.use(routes);
-
-db.sequelize.sync({ }).then(function() {
+db.sequelize.sync({  }).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on http://localhost/" + PORT)
     });
