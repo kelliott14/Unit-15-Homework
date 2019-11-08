@@ -21,18 +21,37 @@ module.exports = function(app) {
   });
 
   app.put("/api/burgers/:id", function(req, res) {
-      db.Burger.update(
-        {devoured: true},
-        {where: {
-          id: req.params.id
-          }
-        }
-      ).then(function(result) {
-        db.Burger.findAll({}).then(function(results) {
-          var burgers = {burgers: results}
-          res.render("index", burgers)
-        });
-      });
+    console.log(req.body.name)
+
+      db.User.create({
+        name: req.body.name
+      }).then(function(result) {
+        console.log("new user created")
+
+        db.User.findAll({
+          limit: 1,
+          order: [["createdAt", "DESC"]]
+        }).then(function(newUser) {
+          var devouredBy = newUser[0].dataValues.id;
+
+          db.Burger.update(
+                  {devoured: true,
+                  UserID: devouredBy},
+                  {where: {
+                    id: req.params.id
+                    }
+                  }
+                ).then(function(result) {
+                  db.Burger.findAll({}).then(function(results) {
+                    var burgers = {burgers: results}
+                    res.render("index", burgers)
+                  });
+                });
+
+        })
+      })
+
+      
   });
 
 };

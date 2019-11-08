@@ -1,13 +1,18 @@
 $(".devourButton").on("click", function(event) {
     
     var id = $(this).data("id");
-
+    var devouredBy = {
+        name: $("#devouredName"+id).val().trim()
+    }
+    console.log(devouredBy)
+    console.log(id)
     $.ajax("/api/burgers/" + id, {
-        type: "PUT"
+        type: "PUT",
+        data: devouredBy
     }).then(function(){
         console.log("devoured")
 
-        location.reload();
+       // location.reload();
     });
 });
 
