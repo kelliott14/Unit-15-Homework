@@ -12,7 +12,7 @@ $(".devourButton").on("click", function(event) {
     }).then(function(){
         console.log("devoured")
 
-       // location.reload();
+       location.reload();
     });
 });
 

@@ -12,9 +12,13 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Burger.associate = function(models) {
-        Burger.belongsTo(models.User);
-    }
-
+        Burger.belongsTo(models.User, {
+            foreignKey: {
+              allowNull: false
+            }
+        });
+    };
+    
     return Burger;
 };
 

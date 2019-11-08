@@ -3,5 +3,9 @@ module.exports = function(sequelize, DataTypes) {
         name: DataTypes.STRING
     });
 
+    User.associate = function(models) {
+        User.hasMany(models.Burger);
+      };
+
     return User;
 }
