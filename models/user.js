@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     User.associate = function(models) {
-        User.hasMany(models.Burger);
+        User.hasMany(models.Burger15);
       };
 
     return User;
