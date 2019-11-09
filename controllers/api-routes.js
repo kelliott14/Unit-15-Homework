@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   
   app.get("/", function(req, res) {
-      db.Burger.findAll({
+      db.Burger15.findAll({
         include: [ db.User ],
       }).then(function(results) {
         var burgers = {burgers: results}
@@ -11,19 +11,19 @@ module.exports = function(app) {
       });
     });
 
-  app.post("/api/burgers", function(req, res) {
-      db.Burger.create({
+  app.post("/api/burger15s", function(req, res) {
+      db.Burger15.create({
         burger_name: req.body.burger_name,
         UserId: 1
       }).then(function(result) {
-        db.Burger.findAll({}).then(function(results) {
+        db.Burger15.findAll({}).then(function(results) {
           var burgers = {burgers: results}
           res.render("index", burgers)
         });
       });
   });
 
-  app.put("/api/burgers/:id", function(req, res) {
+  app.put("/api/burger15s/:id", function(req, res) {
     
 
       db.User.create({
@@ -38,7 +38,7 @@ module.exports = function(app) {
           var devouredBy = newUser[0].dataValues.id;
           
           
-            db.Burger.update(
+            db.Burger15.update(
                {
                  devoured: true,
                  UserID: devouredBy
@@ -50,7 +50,7 @@ module.exports = function(app) {
                 }
                 ).then(function(result) {
 
-                  db.Burger.findAll({}).then(function(results) {
+                  db.Burger15.findAll({}).then(function(results) {
                     
                     var burgers = {burgers: results}
                     res.render("index", burgers)

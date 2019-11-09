@@ -5,7 +5,7 @@ $(".devourButton").on("click", function(event) {
         name: $("#devouredName"+id).val().trim()
     }
     
-    $.ajax("/api/burgers/" + id, {
+    $.ajax("/api/burger15s/" + id, {
         type: "PUT",
         data: devouredBy
     }).then(function(){
@@ -21,7 +21,7 @@ $(".create-form").on("submit", function(event) {
         burger_name: $("#userInput").val().trim()
     };
     
-    $.ajax("/api/burgers", {
+    $.ajax("/api/burger15s", {
         type: "POST",
         data: newBurger
     }).then(function(){
