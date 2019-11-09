@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kelliott14/Unit-15-Homework#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "mysql2": "^2.0.0",
     "sequelize": "^5.21.2"
   }
