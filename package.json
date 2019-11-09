@@ -18,10 +18,9 @@
   },
   "homepage": "https://github.com/kelliott14/Unit-15-Homework#readme",
   "dependencies": {
-    "express": "*",
-    "express-handlebars": "*",
-    "body-parser":"*",
-    "bcrypt": "^0.8.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "body-parser": "^1.5.2",
     "mysql2": "^2.0.0",
     "path": "^0.12.7",
     "request": "^2.88.0",
