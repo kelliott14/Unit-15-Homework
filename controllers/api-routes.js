@@ -24,19 +24,19 @@ module.exports = function(app) {
   });
 
   app.put("/api/burgers/:id", function(req, res) {
-    console.log("line 24-------------------------------------------------------")
+    
 
       db.User.create({
         name: req.body.name
       }).then(function(result) {
-        console.log("new user created")
+        
 
         db.User.findAll({
           limit: 1,
           order: [["createdAt", "DESC"]]
         }).then(function(newUser) {
           var devouredBy = newUser[0].dataValues.id;
-          console.log(devouredBy)
+          
           
             db.Burger.update(
                {
